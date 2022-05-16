@@ -9,8 +9,6 @@ import getQuantityItemsInCart from '../../utils/getQuantityItemsInCart'
 import getTotal from '../../utils/getTotalPriceInCart'
 import getTax from '../../utils/getTaxInCart'
 
-// import ProductAttributes from '../common/ProductAttributes/ProductAttributes'
-// import QuantitySquare from '../common/QuantitySquare/QuantitySquare'
 import CartItem from './CartItem'
 
 class Cart extends Component {
