@@ -1,0 +1,8 @@
+.products-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.title{
+    font-size: 42px;
+    margin-bottom: 100px;
+}

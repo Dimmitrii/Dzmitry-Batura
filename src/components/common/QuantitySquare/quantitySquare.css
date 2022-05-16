@@ -1,0 +1,18 @@
+.quantity-square{
+    display: flex;
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+.quantity-square-line{
+    width: 1px;
+    height: 15px;
+    background-color: #1D1F22;
+}
+
+.minus-line{
+    margin-right:-1px;
+    transform: rotate(-90deg);
+}

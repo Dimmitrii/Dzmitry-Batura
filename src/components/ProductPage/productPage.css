@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+.product-page{
+    margin-top: 80px;
+    display: flex;
+}
+.product-side-images{
+    display: flex;
+    flex-direction: column;
+}
+.product-side-images div{
+    margin-bottom: 40px;
+}
+.product-current-img{
+    margin: 2px 100px 0 40px;
+}
+.product-page p{
+    margin: 0;
+}
+.product-page-title{
+    font-size: 30px;
+    margin-bottom: 43px;    
+}
+.product-page-title p{
+    /* line-height: 26px; */
+    margin: 0;
+}
+.product-page-title p:nth-child(1){
+    line-height: 26px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.product-page-atributes{
+    font-size: 18px;
+    margin-bottom: 36px;
+}
+.product-page-atributes p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.product-atribute{
+    display: flex;
+    margin-bottom: 24px;
+}
+.product-atribute-item{
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 61px;
+    height: 43px;
+    border: 1px solid #1D1F22;
+    line-height: 43px;
+    text-align: center;
+    cursor: pointer;
+}
+.product-atribute-item-swatch{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-color: black;
+    /* margin-right: 8px; */
+    margin: 1px;
+}
+.product-page-price{
+    font-size: 18px;
+    font-weight: 700;
+}
+.product-page-price p:nth-child(2){
+    font-size: 24px;
+    margin-top: 5px;
+}
+.product-add-button{
+    width: 292px;
+    font-size: 600;
+    font-size: 16px;
+    border: 0;
+    color: white;
+    padding: 16px 0 16px 0;
+    background-color: #5ECE7B;
+}

@@ -1,0 +1,116 @@
+.cart-overlay-modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(57, 55, 72, 0.22);
+    /* top: 56px; */
+    left: 0;
+    z-index: 1;
+}
+.cart-overlay-wrapper{
+    width: 1238px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+.cart-overlay-content{
+    width: fit-content;
+    padding: 32px 16px 32px 16px;
+    background-color: #FFFFFF;
+    position: relative;
+    left: 16px;
+    overflow-y: scroll;
+    height: 677px;
+}
+.cart-overlay-content-quantity{
+    font-size: 16px;
+}
+.cart-overlay-content .cart-page-container{
+    border: 0;
+}
+.cart-overlay-content .cart-item {
+    padding: 32px 0 40px 0;
+    border: 0;
+}
+.cart-overlay-content .cart-item-attribute{
+    margin-right: 20px;
+}
+.cart-overlay-content .cart-item-brand{
+    font-weight: 300;
+    font-size: 16px;
+}
+.cart-overlay-content .cart-item-name{
+    font-size: 16px;
+    font-weight: 300;
+}
+.cart-overlay-content .cart-item-price{
+    font-size: 16px;
+    font-weight: 500;
+}
+.cart-overlay-content .product-page-atributes p{
+    font-size: 14px;
+    font-weight: 400;
+}
+.cart-overlay-content .product-atribute-item{
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.cart-overlay-content .product-atribute-item-swatch{
+    width: 16px;
+    height: 16px;
+}
+.cart-overlay-content .cart-item-quantity{
+    font-size: 16px;
+    font-weight: 500;
+}
+.cart-overlay-content .quantity-square{
+    width: 24px;
+    height: 24px;
+}
+.cart-overlay-content .quantity-square-line{
+    height: 8px;
+}
+.cart-overlay-content .cart-item-gallery{
+    height: 191px;
+}
+.cart-overlay-content .cart-item-gallery > div:nth-child(2){
+    width: 121px !important;
+}
+.cart-overlay-content .cart-item-gallery img:nth-child(1){
+    width: 121px;
+    height: 191px;
+    display: inline;
+}
+.cart-overlay-content .cart-item-gallery img{
+    display: none;
+}
+.cart-overlay-content-total{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.cart-overlay-content-buttons{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+}
+.cart-overlay-content-buttons button{
+    width: 140px;
+    height: 43px;
+    outline: none;
+}
+.cart-overlay-button-view{
+    border: 1px solid black;
+    background-color: #FFFFFF;
+}
+.cart-overlay-button-checkout{
+    border: 1px solid #5ECE7B;
+    background-color: #5ECE7B;
+    color: #FFFFFF;
+}

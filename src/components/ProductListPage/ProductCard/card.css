@@ -1,0 +1,40 @@
+.card{
+    padding: 15px 16px 16px 16px;
+    margin-right: 40px;
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 100px;
+    height: 404px;
+}
+.card:nth-child(3n){
+    margin-right: 0px;
+}
+.card-title{
+    padding: 24px 0 8px 0;
+}
+.card:hover{
+    box-shadow: 0px 4px 35px 0px rgb(168, 172, 176, 19%);
+}
+.card-out-stock{
+    background-color: rgba(255, 255, 255,0.5);
+    width: 386px;
+    height: 439px;
+    position: absolute;
+    text-align: center;
+    font-size: 24px;
+    color: #8D8F9A;
+    line-height: 356px;
+}
+.add-to-cart-button{
+    /* margin:-30px 15px 0 0;  */
+    position: relative;
+    top: 304px;
+    left: 287px;
+    display: none;
+    cursor: pointer;
+    height: 0px;
+
+}
+.card:hover .add-to-cart-button{
+    display: block;
+}

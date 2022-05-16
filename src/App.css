@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;500;600;700;800;900&display=swap');
+
+.App{
+    width: 1238px;
+    margin: 0 auto;
+    font-family: "Raleway", sans-serif;
+    color: #1D1F22;
+    /* overflow-y: hidden; */
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+p{
+    margin: 0;
+}

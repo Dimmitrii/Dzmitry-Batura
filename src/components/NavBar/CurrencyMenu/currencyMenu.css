@@ -1,0 +1,24 @@
+.currency-menu-container{
+    width: 1238px;
+    display: flex;
+    margin: 0 auto;
+    justify-content:flex-end;
+}
+.currency-menu{
+    box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 19%);
+    margin-top: 68px;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 12px;
+    width: 114px;
+    background-color: #FFFFFF;
+    z-index: 2;
+    position: relative;
+    left: 22px;
+}
+.currency-menu-item{
+    padding: 8px 0 8px 0;
+    margin-top: 12px;
+    cursor: pointer;
+    padding-left: 20px;
+}
