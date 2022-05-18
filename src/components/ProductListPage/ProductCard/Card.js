@@ -28,22 +28,24 @@ class Card extends Component {
         return (
             <div className='card'>
                 {!inStock ? <div className='card-out-stock'>
+                    <Link to={inStock ? `/main/item/${id}` : `/main/item/${id}`}>
                     OUT OF STOCK
+                    </Link>
                 </div>: null}
                 {inStock ? 
                 <div className='add-to-cart-button' onClick={()=> this.addDefaultProductToCart(product)}>
                         <img src={addToCartIcon} alt="add product to cart"/>
                 </div> : null}
                 <div>
-                    <Link to={inStock ? `/main/item/${id}` : undefined}>
-                        <div style={{height:"330px"}}>
-                            <img src={gallery[0]} width="354px" height="330px" style={{float:"left"}} alt={name}/>
+                    <Link to={inStock ? `/main/item/${id}` : `/main/item/${id}`}>
+                        <div className='card-img-wrapper'>
+                            <img src={gallery[0]}  alt={name}/>
                         </div>
                     </Link>
                 </div>
-                <Link to={inStock ? `/main/item/${id}` : undefined}>
+                <Link to={inStock ? `/main/item/${id}` : `/main/item/${id}`}>
                     <div className='card-title'>{brand} {name}</div>
-                    <div style={{fontWeight:"600"}}>{this.props.currentCurrency}{currentCurrency.amount}</div>
+                    <div className='card-amount'>{this.props.currentCurrency}{currentCurrency.amount.toFixed(2)}</div>
                 </Link>
             </div>
         )

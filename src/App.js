@@ -13,7 +13,7 @@ export default class App extends Component {
   render(){
     return(
       <div className="App">
-          <NavBar/>
+          <Route path="/" render={(props)=> <NavBar {...props}/>}/>
           <Switch>
             <Route path="/main/item/:id" render={(props) => <ProductPage {...props}/>}/>
             <Route path='/main/' render={(props) => <List {...props}/>}/>

@@ -36,9 +36,9 @@ class Cart extends Component {
                 </div>
                 {overlay ? null : <>
                     <div className='cart-order-info'>
-                        <p>Tax 21%:</p> <p><b>{currentCurrency}{getTax(getTotal(this.props.productsInCart, currentCurrency))}</b></p>
+                        <p>Tax 21%:</p> <p><b>{currentCurrency}{getTax(getTotal(this.props.productsInCart, currentCurrency)).toFixed(2)}</b></p>
                         <p>Quantity: &nbsp;</p> <p><b>{getQuantityItemsInCart(this.props.productsInCart)}</b></p>
-                        <p>Total:</p> <p><b>{currentCurrency}{getTotal(this.props.productsInCart, currentCurrency)}</b></p>
+                        <p>Total:</p> <p><b>{currentCurrency}{getTotal(this.props.productsInCart, currentCurrency).toFixed(2)}</b></p>
                     </div>
                     <button className='order-button'>ORDER</button>
                 </>}

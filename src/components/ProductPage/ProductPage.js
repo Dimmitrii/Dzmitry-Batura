@@ -31,7 +31,8 @@ export class ProductPage extends PureComponent {
                 selectedAttributes: defaultAttributes,
             });
 
-        })
+        });
+        // console.log("product mount")
     }
 
     handleImgClick = (img) => {
@@ -53,7 +54,7 @@ export class ProductPage extends PureComponent {
                     <div className='product-page'>
                         <ProductSideImages gallery={ gallery } name={name} handleImgClick={this.handleImgClick}/>
                         <div className='product-current-img'>
-                            <img src={this.state.currentImg} width="610px" height="511" alt={name}/>
+                            <img src={this.state.currentImg} alt={name}/>
                         </div>   
                         <ProductDescription description={description} name={name} brand={brand} prices={prices}
                             attributes={attributes} selectedAttributes={this.state.selectedAttributes} handleSelectAttribute={this.handleSelectAttribute}

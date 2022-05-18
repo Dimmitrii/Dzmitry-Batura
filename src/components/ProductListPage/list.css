@@ -1,3 +1,6 @@
+.products-list-wrapper{
+    margin-top: 80px;
+}
 .products-list{
     display: flex;
     flex-wrap: wrap;

@@ -7,12 +7,24 @@
 .product-side-images{
     display: flex;
     flex-direction: column;
+    width: 79px;
+    flex-shrink: 0;
 }
 .product-side-images div{
     margin-bottom: 40px;
 }
+.product-side-images div img{
+    width: 100%;
+}
 .product-current-img{
     margin: 2px 100px 0 40px;
+    width: 610px;
+    height: 511px;
+    text-align: center;
+    flex-shrink: 0;
+}
+.product-current-img img{
+    width: 100%;
 }
 .product-page p{
     margin: 0;
@@ -68,6 +80,9 @@
     font-size: 24px;
     margin-top: 5px;
 }
+.product-add-button-wrapper{
+    margin-top: 48px;
+}
 .product-add-button{
     width: 292px;
     font-size: 600;
@@ -76,4 +91,7 @@
     color: white;
     padding: 16px 0 16px 0;
     background-color: #5ECE7B;
+}
+.product-page-description{
+    margin-top: 40px;
 }

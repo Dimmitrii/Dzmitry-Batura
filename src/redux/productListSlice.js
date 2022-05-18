@@ -34,6 +34,7 @@ export const { addAllProducts, changeProductsCategory, addCurrencies, selectCurr
 export const fetchAllProducts = (category) => async ( dispatch ) =>{
     try{
         const data  = await request('http://localhost:4000/', getQueries(category));
+        
         dispatch( addAllProducts(data) );
     }
     catch(err){

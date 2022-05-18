@@ -25,7 +25,7 @@ export class CartOverlay extends Component {
                         <div>
                             <div className='cart-overlay-content-total'>
                                 <div>Total</div>
-                                <div><b>{currentCurrency}{getTotal(productsInCart, currentCurrency)}</b></div>
+                                <div><b>{currentCurrency}{getTotal(productsInCart, currentCurrency).toFixed(2)}</b></div>
                             </div>
                             <div className='cart-overlay-content-buttons'>
                                 <Link to="/cart/">

@@ -31,9 +31,9 @@ class ProductDescription extends PureComponent {
                 <ProductAttributes attributes={attributes} handleSelectAttribute={handleSelectAttribute} selectedAttributes={selectedAttributes} />
                 <div className='product-page-price'>
                     <p>PRICE:</p>
-                    <p>{currentCurrency}{currentPrice.amount}</p>
+                    <p>{currentCurrency}{currentPrice.amount.toFixed(2)}</p>
                 </div>
-                <div style={{marginTop:"48px"}}>
+                <div className='product-add-button-wrapper'>
                     <button className='product-add-button' onClick={()=> this.validateAddToCart( handleAddToCart, product, selectedAttributes )}>ADD TO CART</button>
                 </div>
                 <div style={{marginTop:"40px"}}>{parse(description)}</div>

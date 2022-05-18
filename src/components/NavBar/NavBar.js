@@ -46,22 +46,28 @@ export class NavBar extends Component {
 
         const { isCurrencyMenuOpen } = this.state;
         const { currentCurrency, changeProductsCategory } = this.props;
+        const { pathname } =this.props.location;
         return (
             <nav>
                 <div className='nav-links'>
-                    <div><Link to="/main/" onClick={()=>{changeProductsCategory("")}}>All</Link></div>
-                    <div><Link to="/main/tech/" onClick={()=>{changeProductsCategory("tech")}}>Tech</Link></div>
-                    <div><Link to="/main/clothes/" onClick={()=>{changeProductsCategory("clothes")}}>Clothes</Link></div>
+                    <div className={pathname === "/main/" ? "nav-link-active" : "" }>
+                        <Link to="/main/" onClick={()=>{changeProductsCategory("")}}>All</Link>
+                    </div>
+                    <div className={pathname === "/main/tech/" ? "nav-link-active" : "" }>
+                        <Link to="/main/tech/" onClick={()=>{changeProductsCategory("tech")}}>Tech</Link>
+                    </div>
+                    <div className={pathname === "/main/clothes/" ? "nav-link-active" : "" }>
+                        <Link to="/main/clothes/" onClick={()=>{changeProductsCategory("clothes")}}>Clothes</Link>
+                    </div>
                 </div>
                 <div className='logo'>
                     <Link to="/main/" onClick={()=>{changeProductsCategory("")}}><img src={logo} alt="logo"/></Link>
                 </div>
-                <div className='cart-currency-menu'>
-                    <div style={{width:"52px"}}>
-                        <div style={{display:"flex",cursor:"pointer"}} onClick = {this.handleCurrencyMenuClick}>
-                            <div style={{marginRight:"10px"}}>{currentCurrency}</div>
-                            <div className={isCurrencyMenuOpen ? "cart-currency-arrow-open" : "cart-currency-arrow-closed"}>
-                                <img src={arrow} alt="currency menu"/>
+                <div className='cart-currency-cart-menu'>
+                        <div className='cart-currency-logo-wrapper' onClick = {this.handleCurrencyMenuClick}>
+                            <div>{currentCurrency}</div>
+                            <div className="cart-currency-arrow">
+                                <img src={arrow} alt="currency menu" className={isCurrencyMenuOpen ? "arrow-open" : ""}/>
                             </div>
                         </div>
                         <div 
@@ -70,10 +76,9 @@ export class NavBar extends Component {
                             onClick={this.handleCurrencyMenuClick}
                         >
                             <CurrencyMenu handleCurrencyMenuClick={this.handleCurrencyMenuClick}/>
-                        </div>
                     </div>
                     <div>
-                        <div onClick={()=> this.handleCartOverlayClick(!this.state.isCartOverlayOpen)} style={{cursor:"pointer"}}>
+                        <div onClick={()=> this.handleCartOverlayClick(!this.state.isCartOverlayOpen)}>
                             <img src={cart} alt="cart"/>
                             <div className='cart-overlay-button'>
                                 {getQuantityItemsInCart(this.props.productsInCart)}

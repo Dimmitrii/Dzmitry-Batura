@@ -47,11 +47,11 @@ export default class CartItem extends Component {
                         <div>{attribute.quantity}</div>
                         <QuantitySquare onClick={()=> validateChangeQuantityProduct(productIndex, atrIndex, false, attribute.quantity)}/>
                     </div>
-                    <div style={{width:"200px"}}>
-                        <img src={product.gallery[this.state.currentImage]} alt={product.description} width="200px" height="288px"/>
+                    <div className='cart-item-image'>
+                        <img src={product.gallery[this.state.currentImage]} alt={product.description}/>
                         {product.gallery.length === 1 ? null : <>
-                            <img src={leftArrow} alt="prevoius product" style={{position:"relative", left:"128px",bottom:"45px"}} onClick = {this.previousImage}/>
-                            <img src={rightArrow} alt="next product" style={{position:"relative", left:"136px",bottom:"45px"}} onClick = {this.nextImage}/>
+                            <img src={leftArrow} alt="prevoius product" className="cart-previous-item-button" onClick = {this.previousImage}/>
+                            <img src={rightArrow} alt="next product" className="cart-next-item-button" onClick = {this.nextImage}/>
                         </>}
                     </div>
                 </div>

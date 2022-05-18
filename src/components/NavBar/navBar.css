@@ -10,11 +10,9 @@ nav > div{
 .nav-links{
     display: flex;
     padding-top: 0px;
-    /* padding-bottom: 2px; */
     height: 56px;
 }
 .nav-links div{
-    /* flex-grow: 1; */
     font-size: 16px;
     padding: 4px 15px 0 15px;
 }
@@ -24,22 +22,34 @@ nav > div{
     color: #5ECE7B;
     font-weight: 600;
 }
+.nav-link-active{
+    border-bottom: 2px solid #5ECE7B;
+    padding-top: 2px;
+    color: #5ECE7B;
+    font-weight: 600;
+} 
 .logo{
     text-align: center;
 }
-.cart-currency-menu{
+.cart-currency-cart-menu{
     padding-top: 8px;
     display: flex;
     justify-content: flex-end;
     font-size: 18px;
     font-weight: 500;
+    cursor: pointer;
 }
-.cart-currency-arrow-open{
-    margin: 6px 22px 0 0;
-    transform: rotate(180deg)
+.cart-currency-logo-wrapper{
+    display: flex;
 }
-.cart-currency-arrow-closed{
+.cart-currency-logo-wrapper > div:nth-child(1){
+    margin-right: 10px;
+}
+.cart-currency-arrow{
     margin: -2px 22px 0 0;
+}
+.arrow-open{
+    transform: rotate(180deg)
 }
 .cart-modal-currency{
     position: fixed;

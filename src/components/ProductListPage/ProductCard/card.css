@@ -12,6 +12,9 @@
 .card-title{
     padding: 24px 0 8px 0;
 }
+.card-amount{
+    font-weight: 600;
+}
 .card:hover{
     box-shadow: 0px 4px 35px 0px rgb(168, 172, 176, 19%);
 }
@@ -26,7 +29,6 @@
     line-height: 356px;
 }
 .add-to-cart-button{
-    /* margin:-30px 15px 0 0;  */
     position: relative;
     top: 304px;
     left: 287px;
@@ -37,4 +39,13 @@
 }
 .card:hover .add-to-cart-button{
     display: block;
+}
+.card-img-wrapper{
+    height: 330px;
+    width: 354px;
+    text-align: center;
+}
+.card-img-wrapper img{
+    height: 100%;
+    max-width: 354px;
 }

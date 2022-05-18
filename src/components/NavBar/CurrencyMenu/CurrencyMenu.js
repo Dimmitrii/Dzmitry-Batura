@@ -13,12 +13,11 @@ export class CurrencyMenu extends Component {
                     {this.props.currencies.map((currency, index) =>
                     <div
                         key={index}
-                        className='currency-menu-item'
+                        className={this.props.currentCurrency === currency.symbol ? "currency-menu-item-active" : "currency-menu-item"}
                         onClick={() =>{
                             this.props.selectCurrentCurrency(currency.symbol);
                             this.props.handleCurrencyMenuClick()
                         }}
-                        style={{backgroundColor: this.props.currentCurrency === currency.symbol ? "#EEEEEE" : ""}}
                     >
                         {currency.symbol} {currency.label}
                     </div>)}

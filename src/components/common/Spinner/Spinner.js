@@ -5,7 +5,7 @@ import "./spinner.css"
 export default class Spinner extends Component {
     render() {
         return (
-            <div style={{display:"flex",justifyContent:"center",marginTop:"350px"}}>
+            <div className='spiner-wrapper'>
                 <div className='loader'/>
             </div>
         )

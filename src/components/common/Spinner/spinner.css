@@ -1,3 +1,8 @@
+.spiner-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top:350px;
+}
 .loader {
     border: 6px solid #f3f3f3;
     border-radius: 50%;

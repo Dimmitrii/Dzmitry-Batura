@@ -33,7 +33,7 @@ export class List extends Component {
         const categoryTitle = this.props.productsCategory === "" ? "All" : this.props.productsCategory === "tech" ? "Tech" : "Clothes";
 
         return (
-            <div style={{marginTop:"80px"}}>
+            <div className='products-list-wrapper'>
                 <div className='title'>{categoryTitle}</div>
                 <div className='products-list'>
                     {this.props.products.map( item => 

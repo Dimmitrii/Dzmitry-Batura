@@ -22,3 +22,13 @@
     cursor: pointer;
     padding-left: 20px;
 }
+.currency-menu-item:hover{
+    background-color: #EEEEEE;
+}
+.currency-menu-item-active{
+    padding: 8px 0 8px 0;
+    margin-top: 12px;
+    cursor: pointer;
+    padding-left: 20px;
+    background-color: #EEEEEE;
+}
