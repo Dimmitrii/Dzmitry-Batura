@@ -45,7 +45,7 @@ export class ProductPage extends PureComponent {
     }
 
     render() {
-        const { gallery, description, name, brand, prices, attributes } = this.props.product;
+        const { gallery, description, name, brand, prices, attributes, inStock } = this.props.product;
 
         return (
             <>
@@ -55,7 +55,7 @@ export class ProductPage extends PureComponent {
                         <div className='product-current-img'>
                             <img src={this.state.currentImg} alt={name}/>
                         </div>   
-                        <ProductDescription description={description} name={name} brand={brand} prices={prices}
+                        <ProductDescription description={description} name={name} brand={brand} prices={prices} inStock={inStock}
                             attributes={attributes} selectedAttributes={this.state.selectedAttributes} handleSelectAttribute={this.handleSelectAttribute}
                             handleAddToCart={this.props.addProductToCart} product = {this.props.product}
                         />

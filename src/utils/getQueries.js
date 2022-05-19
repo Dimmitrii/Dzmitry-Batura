@@ -10,6 +10,7 @@ const getQueries = (query, type)=>{
                     description
                     gallery
                     brand
+                    inStock
                     prices{
                         currency{
                             label

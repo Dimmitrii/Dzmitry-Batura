@@ -8,6 +8,8 @@ import ProductAttributes from '../common/ProductAttributes/ProductAttributes';
 class ProductDescription extends PureComponent {
 
     validateAddToCart = ( callBack, product, selectedAttributes ) => {
+        if(!this.props.inStock) return;
+
         for(const key in selectedAttributes){
             if(selectedAttributes[key] === ""){
                 alert("You can not add a product to the cart without selected attributes ")
@@ -18,7 +20,7 @@ class ProductDescription extends PureComponent {
     }
 
     render() {
-        const { name, description, brand, prices, attributes, selectedAttributes, handleSelectAttribute, handleAddToCart, product, currentCurrency } = this.props;
+        const { name, description, brand, prices, attributes, selectedAttributes, handleSelectAttribute, handleAddToCart, product, currentCurrency, inStock } = this.props;
 
         const currentPrice = prices.filter( price => price.currency.symbol === currentCurrency)[0];
 
@@ -34,7 +36,9 @@ class ProductDescription extends PureComponent {
                     <p>{currentCurrency}{currentPrice.amount.toFixed(2)}</p>
                 </div>
                 <div className='product-add-button-wrapper'>
-                    <button className='product-add-button' onClick={()=> this.validateAddToCart( handleAddToCart, product, selectedAttributes )}>ADD TO CART</button>
+                    <button className='product-add-button' onClick={()=> this.validateAddToCart( handleAddToCart, product, selectedAttributes )}>
+                        {inStock ? "ADD TO CART" : "OUT OF STOCK"}
+                    </button>
                 </div>
                 <div className='product-page-description'>{parse(description)}</div>
             </div>
