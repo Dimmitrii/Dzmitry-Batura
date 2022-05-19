@@ -32,7 +32,6 @@ export class ProductPage extends PureComponent {
             });
 
         });
-        // console.log("product mount")
     }
 
     handleImgClick = (img) => {

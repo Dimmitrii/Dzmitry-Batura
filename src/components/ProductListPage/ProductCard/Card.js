@@ -27,11 +27,11 @@ class Card extends Component {
 
         return (
             <div className='card'>
-                {!inStock ? <div className='card-out-stock'>
-                    <Link to={inStock ? `/main/item/${id}` : `/main/item/${id}`}>
-                    OUT OF STOCK
-                    </Link>
-                </div>: null}
+                {!inStock ? <Link to={`/main/item/${id}`}>
+                    <div className='card-out-stock'>
+                        OUT OF STOCK
+                    </div>
+                </Link>: null}
                 {inStock ? 
                 <div className='add-to-cart-button' onClick={()=> this.addDefaultProductToCart(product)}>
                         <img src={addToCartIcon} alt="add product to cart"/>
