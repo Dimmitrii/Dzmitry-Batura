@@ -11,8 +11,12 @@ const productListSlice = createSlice({
         productsCategory: "",
         currencies: [],
         currentCurrency: "$",
+        productCategories: [],
     },
     reducers: {
+        addProductsCategorires: ( state, action ) => {
+            state.productCategories = action.payload;
+        },
         addAllProducts: ( state, action ) => {
             state.products = action.payload.category.products;
         },
@@ -29,13 +33,30 @@ const productListSlice = createSlice({
     },
 });
 
-export const { addAllProducts, changeProductsCategory, addCurrencies, selectCurrentCurrency } = productListSlice.actions;
+export const { addAllProducts, changeProductsCategory, addCurrencies, selectCurrentCurrency, addProductsCategorires } = productListSlice.actions;
 
 export const fetchAllProducts = (category) => async ( dispatch ) =>{
     try{
         const data  = await request('http://localhost:4000/', getQueries(category));
         
         dispatch( addAllProducts(data) );
+    }
+    catch(err){
+        throw new Error(err);
+    }
+}
+
+export const fetchCategories = () => async ( dispatch ) =>{
+    try{
+        const data  = await request('http://localhost:4000/', gql`
+        query{
+            categories{
+                name
+            }
+        }
+        `);
+        
+        dispatch( addProductsCategorires(data.categories) );
     }
     catch(err){
         throw new Error(err);

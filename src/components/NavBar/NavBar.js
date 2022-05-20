@@ -9,7 +9,7 @@ import arrow from "../../assets/arrow.svg";
 
 import getQuantityItemsInCart from '../../utils/getQuantityItemsInCart';
 
-import { fetchAllProducts, changeProductsCategory, fetchCurrencies } from '../../redux/productListSlice';
+import { fetchAllProducts, changeProductsCategory, fetchCurrencies, fetchCategories } from '../../redux/productListSlice';
 
 import { Link } from 'react-router-dom';
 
@@ -25,6 +25,7 @@ export class NavBar extends Component {
 
     componentDidMount(){
         this.props.fetchCurrencies();
+        this.props.fetchCategories();
     }
 
     handleCurrencyMenuClick = () => {
@@ -46,19 +47,16 @@ export class NavBar extends Component {
 
         const { isCurrencyMenuOpen } = this.state;
         const { currentCurrency, changeProductsCategory } = this.props;
-        const { pathname } =this.props.location;
+        const currentCategoryUrl = this.props.location.pathname.slice(6).replace(/\//ig, "");
         return (
             <nav>
                 <div className='nav-links'>
-                    <div className={pathname === "/main/" ? "nav-link-active" : "" }>
-                        <Link to="/main/" onClick={()=>{changeProductsCategory("")}}>All</Link>
-                    </div>
-                    <div className={pathname === "/main/tech/" ? "nav-link-active" : "" }>
-                        <Link to="/main/tech/" onClick={()=>{changeProductsCategory("tech")}}>Tech</Link>
-                    </div>
-                    <div className={pathname === "/main/clothes/" ? "nav-link-active" : "" }>
-                        <Link to="/main/clothes/" onClick={()=>{changeProductsCategory("clothes")}}>Clothes</Link>
-                    </div>
+                    {this.props.productCategories.map( (category, index) => 
+                    <div className={ (currentCategoryUrl === "" && index === 0) || currentCategoryUrl === category.name ? "nav-link-active" : "" }>
+                        <Link to={`/main/${category.name}/`} onClick={()=>{changeProductsCategory(category.name)}}>
+                            {category.name}
+                        </Link>
+                    </div> )}
                 </div>
                 <div className='logo'>
                     <Link to="/main/" onClick={()=>{changeProductsCategory("")}}><img src={logo} alt="logo"/></Link>
@@ -94,8 +92,9 @@ export class NavBar extends Component {
 const mapStateToProps = (state) => ({
     currentCurrency: state.productListReducer.currentCurrency,
     productsInCart: state.cartReducer.productsInCart,
+    productCategories: state.productListReducer.productCategories,
 });
 
-const mapDispatchToProps = { fetchAllProducts, changeProductsCategory, fetchCurrencies }
+const mapDispatchToProps = { fetchAllProducts, changeProductsCategory, fetchCurrencies, fetchCategories }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
