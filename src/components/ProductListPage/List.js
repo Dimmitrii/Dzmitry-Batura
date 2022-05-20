@@ -13,12 +13,6 @@ export class List extends Component {
     componentDidMount(){
         const query = this.props.location.pathname.slice(6).replace(/\//ig, "");
         
-        if(query === ""){
-            this.props.fetchAllProducts("");
-
-            return;
-        }
-
         this.props.fetchAllProducts(query);
         this.props.changeProductsCategory(query);
     }
