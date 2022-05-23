@@ -12,10 +12,12 @@ const productListSlice = createSlice({
         currencies: [],
         currentCurrency: "$",
         productCategories: [],
+        isCategoriesPending: true,
     },
     reducers: {
         addProductsCategorires: ( state, action ) => {
             state.productCategories = action.payload;
+            state.isCategoriesPending = false;
         },
         addAllProducts: ( state, action ) => {
             state.products = action.payload.category.products;

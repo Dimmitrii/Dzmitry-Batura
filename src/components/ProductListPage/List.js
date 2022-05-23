@@ -18,7 +18,15 @@ export class List extends Component {
     }
 
     componentDidUpdate(prevProps){
+        if(this.props.isCategoriesPending) return; 
+
+        const isPrevPropsFirstCategory =  prevProps.productsCategory === "" || prevProps.productsCategory === this.props.productCategories[0].name;
+        const isCurrentPropsFirstCategory = this.props.productsCategory === "" || this.props.productsCategory === this.props.productCategories[0].name;
+
+        if(isPrevPropsFirstCategory && isCurrentPropsFirstCategory) return; 
+
         if(prevProps.productsCategory === this.props.productsCategory) return;
+        console.log(prevProps.productsCategory, this.props.productsCategory)
         this.props.fetchAllProducts(this.props.productsCategory);
     }
 
@@ -42,6 +50,8 @@ export class List extends Component {
 const mapStateToProps = (state) => ({
     products: state.productListReducer.products,
     productsCategory: state.productListReducer.productsCategory,
+    productCategories: state.productListReducer.productCategories,
+    isCategoriesPending: state.productListReducer.isCategoriesPending,
 })
 
 const actions = { fetchAllProducts, changeProductsCategory }
